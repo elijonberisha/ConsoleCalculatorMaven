@@ -2,6 +2,8 @@ package ch.bbw.consolecalculator;
 
 import static org.junit.Assert.*;
 
+import java.lang.reflect.Method;
+
 import org.junit.Before;
 
 /**
@@ -57,6 +59,11 @@ public class CalculatorTest {
 	@Test 
 	public void testMultiplicationPositiveProtected() {
 		assertTrue(testee.multiplicate(10, 2) == 20); 
+	}
+	
+	@Test 
+	public void testMultiplicationPositivePrivate() {
+		assertTrue(testee.multiplicatePackage(10, 2) == 20); 
 	}
 
 }
