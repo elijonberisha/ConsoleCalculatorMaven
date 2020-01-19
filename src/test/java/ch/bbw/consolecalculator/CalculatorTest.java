@@ -3,6 +3,7 @@ package ch.bbw.consolecalculator;
 import static org.junit.Assert.*;
 
 import java.lang.reflect.Method;
+import java.math.BigInteger;
 
 import org.junit.Before;
 
@@ -65,5 +66,53 @@ public class CalculatorTest {
 	public void testMultiplicationPositivePrivate() {
 		assertTrue(testee.multiplicatePackage(10, 2) == 20); 
 	}
+	
+	// NEW ADDITION TESTS 
+	@Test
+	public void testSummeEinPositivEinNegativ() {
+		assertTrue(testee.summe(10, -10) == 0);
+	}
+	
+	@Test
+	public void testSummeEinPostivEinNull() {
+		assertTrue(testee.summe(10, 0) == 10);
+	}
+	
+	@Test 
+	public void testSummeMaxValue() {
+		try {
+			assertTrue(testee.summe(10, Integer.MAX_VALUE) == Integer.MIN_VALUE);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test 
+	public void testSummeDoubleMinValue() {
+		try {
+			assertTrue(testee.summe(Integer.MIN_VALUE, Integer.MIN_VALUE) == Integer.MAX_VALUE);
+		} catch(AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test 
+	public void testSummeMinMaxValue() {
+		try {
+			assertTrue(testee.summe(Integer.MAX_VALUE, Integer.MIN_VALUE) == 0);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test 
+	public void testSummeDoubleMaxValue() {
+		try {
+			assertTrue(testee.summe(Integer.MAX_VALUE, Integer.MAX_VALUE) == Integer.MIN_VALUE);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+
 
 }
