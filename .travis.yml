@@ -1,11 +1,10 @@
 language: java
 sudo: false
 script: mvn install
-
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD"
-  skip_cleanup: true
+  api_key:
+    secure: RYwvqKPgF4xstehI6nRmQMk33i/i+aQ7U14p/EmYRLlnaXDmhVc8gTnVAx99C5F/X683MASaRt9lw+MQnF+AIcUMqpUGB9qhV+Ahxe/XooXLzYm+Y7tBwrqzehnnGqabuKIs3pB1fNCfK108Q6ZAtSOt+H+1tdspJmPngsnRixV4vncXLlWEMoggoUY/fyjqS7Rn1S7fx9OZUJNXirricX0V6aeTRRIx8lg2lG9YJrMBi0cpDqyBEuAfjdEzI12SfQW7VNkiK3GZiAguIwWi/JvC2DHH+S3ejeeTb6Z8SMRL4MvSBC+iKk61JcSDvu36RAKYfVtM/EqqJIIa1BDQXCGGFJEnGViV7l2cFvrFrNtnLi7Nw1L6YJ2yHv8vpYxCuXVdwUd4GjjdGpOuaQJgLZu9nqqpGBTlGgkrHzT7+MwG0PXcN8pLh49XA4W4NPrtHNkm6tJvj39zqUjdLa2Tc0EALlQy+xwpJ5l61Odz7Wc+J1P/wrtmL6SQSPgItVDJmzJlYCj7HX49RLe99O8jour+U1cPskQ8fLCtfFAY5mn+I4LCPxGUlM6/pZRql+uZIq/VbXoZf6u/56RdSx+USxVlZtO7dJOXYOEpL5UfF7w9al0Zdjf8n3cQnXBtOy6YlFXrDP9dxstKdqh6PvK7q9bB0pJ/Ovg6AhqkrlHd5/0=
+  file: "/home/travis/.m2/repository/ch/bbw/ConsoleCalculatorMaven/0.0.1-SNAPSHOT/ConsoleCalculatorMaven-0.0.1-SNAPSHOT.jar"
   on:
-    tags: true
+    repo: elijonberisha/ConsoleCalculatorMaven
