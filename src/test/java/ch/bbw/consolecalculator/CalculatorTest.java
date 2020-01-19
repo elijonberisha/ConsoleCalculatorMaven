@@ -113,6 +113,55 @@ public class CalculatorTest {
 			e.printStackTrace();
 		}
 	}
+	//--------------------------------------------------------------------------
+	// NEW SUBTRACTION TESTS 
+	@Test
+	public void testSubtraktionEinPositivEinNegativ() {
+		assertTrue(testee.subtraktion(10, -10) == 20);
+	}
+	
+	@Test
+	public void testSubtraktionEinPostivEinNull() {
+		assertTrue(testee.subtraktion(10, 0) == 10);
+	}
+	
+	@Test 
+	public void testSubtraktionZeroMaxValue() {
+		try {
+			assertTrue(testee.subtraktion(0, Integer.MAX_VALUE) == Integer.MIN_VALUE);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test 
+	public void testSubtraktionDoubleMinValue() {
+		try {
+			assertTrue(testee.subtraktion(Integer.MIN_VALUE, Integer.MIN_VALUE) == Integer.MAX_VALUE);
+		} catch(AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test 
+	public void testSubtraktionMinMaxValue() {
+		try {
+			assertTrue(testee.subtraktion(Integer.MAX_VALUE, Integer.MIN_VALUE) == 0);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test 
+	public void testSubtraktionDoubleMaxValue() {
+		try {
+			assertTrue(testee.subtraktion(Integer.MAX_VALUE, Integer.MAX_VALUE) == 0);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 
 
 }
