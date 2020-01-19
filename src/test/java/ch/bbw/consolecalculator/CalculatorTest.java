@@ -40,5 +40,18 @@ public class CalculatorTest {
 		assertTrue(testee.subtraktion(-10, -25) == 15);
 	}
 	
+	@Test (expected = ArithmeticException.class)
+	public void testDividationByZeroException() {
+		assertTrue(testee.divide(10, 0) == 0);
+	}
+	
+	@Test 
+	public void testDividationByZeroExceptionNotRaised() {
+		try {
+			assertTrue(testee.divide(10, 0) == 0);
+		} catch (ArithmeticException e) {
+			e.printStackTrace();
+		}	
+	}
 
 }
