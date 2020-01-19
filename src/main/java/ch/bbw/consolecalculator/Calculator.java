@@ -19,4 +19,8 @@ public class Calculator {
 	public double divide(int value1, int value2) {
 		return value1 / value2;
 	}
+	
+	protected int multiplicate(int value1, int value2) {
+		return value1 * value2;
+	}
 }

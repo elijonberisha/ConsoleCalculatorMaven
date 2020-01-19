@@ -53,5 +53,10 @@ public class CalculatorTest {
 			e.printStackTrace();
 		}	
 	}
+	
+	@Test 
+	public void testMultiplicationPositiveProtected() {
+		assertTrue(testee.multiplicate(10, 2) == 20); 
+	}
 
 }
