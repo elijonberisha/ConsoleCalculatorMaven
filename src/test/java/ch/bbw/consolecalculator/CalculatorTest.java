@@ -2,6 +2,8 @@ package ch.bbw.consolecalculator;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
+
 /**
  * Test Class for Calculator.java
  * @author Berisha
@@ -11,29 +13,30 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CalculatorTest {
-	Calculator testee; 
+	Calculator testee;
+	
+	@Before
+    public void setUp() {
+        testee = new Calculator();
+    }
 	
 	@Test
 	public void testSummeZweiPositive() {
-		testee = new Calculator();
 		assertTrue(testee.summe(10, 25) == 35);
 	}
 	
 	@Test
 	public void testSubtraktionZweiPositive() {
-		testee = new Calculator();
 		assertTrue(testee.subtraktion(25, 10) == 15);
 	}
 	
 	@Test 
 	public void testAdditionZweiNegative() {
-		testee = new Calculator(); 
 		assertTrue(testee.summe(-10, -5) == -15);
 	}
 	
 	@Test 
 	public void testSubtraktionZweiNegative() {
-		testee = new Calculator(); 
 		assertTrue(testee.subtraktion(-10, -25) == 15);
 	}
 	
