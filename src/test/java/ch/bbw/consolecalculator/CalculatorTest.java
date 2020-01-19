@@ -161,7 +161,50 @@ public class CalculatorTest {
 		}
 	}
 	
+	// ----------------------------------------------------------------------------
+	// NEW DIVIDATION TEST CASES 
 	
+	@Test 
+	public void testDividationByTwoPositive() {
+		assertTrue(testee.divide(10, 2) == 5);
+	}
+	
+	@Test 
+	public void testDividationByTwoNegative() {
+		assertTrue(testee.divide(-10, -2) == 5);
+	}
+	
+	@Test 
+	public void testDividationByOnePositiveOneNegative() {
+		assertTrue(testee.divide(-10, 2) == -5);
+	}
+	
+	@Test 
+	public void testDividationTwoMinValues() {
+		try {
+			assertTrue(testee.divide(Integer.MIN_VALUE, Integer.MIN_VALUE) == 1);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test 
+	public void testDividationTwoMaxValues() {
+		try {
+			assertTrue(testee.divide(Integer.MAX_VALUE, Integer.MAX_VALUE) == 1);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test 
+	public void testDividationOneAndMaxValue() {
+		try {
+			assertTrue(testee.divide(Integer.MAX_VALUE, 1) == 2147483647);
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
 
 
 }

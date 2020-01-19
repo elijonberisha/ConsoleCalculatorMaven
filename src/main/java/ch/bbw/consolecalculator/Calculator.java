@@ -5,6 +5,8 @@ package ch.bbw.consolecalculator;
  * 
  * @author Berisha
  * @version 0.0.1
+ * 
+ * Note: I have updated all feature branches to the master branch to avoid merge conflicts
  */
 
 public class Calculator {
