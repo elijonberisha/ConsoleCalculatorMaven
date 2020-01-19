@@ -31,5 +31,11 @@ public class CalculatorTest {
 		assertTrue(testee.summe(-10, -5) == -15);
 	}
 	
+	@Test 
+	public void testSubtraktionZweiNegative() {
+		testee = new Calculator(); 
+		assertTrue(testee.subtraktion(-10, -25) == 15);
+	}
+	
 
 }
